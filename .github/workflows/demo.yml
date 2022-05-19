@@ -31,4 +31,10 @@ jobs:
       - name: Build
         run: cd random && curdir=$(pwd) && pyinstaller test.py --onefile -p $curdir
         
+      - name: Upload 
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-Linux
+          path: dist/*
+        
       - run: echo "🍏 This job's status is ${{ job.status }}."
