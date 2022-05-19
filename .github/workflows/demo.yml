@@ -29,12 +29,12 @@ jobs:
         run: python3 random/test.py
       
       - name: Build
-        run: cd random && curdir=$(pwd) && pyinstaller test.py --onefile -p $curdir
+        run: cd random && curdir=$(pwd) && pyinstaller test.py --onefile -p $curdir --name test
         
       - name: Upload 
         uses: actions/upload-artifact@v3
         with:
           name: test-Linux
-          path: dist/test
+          path: /home/runner/work/practicepublic/practicepublic/random/dist/test
         
       - run: echo "🍏 This job's status is ${{ job.status }}."
