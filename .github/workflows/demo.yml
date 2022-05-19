@@ -20,4 +20,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Run py file
+        run: cd random && python3 test.py
       - run: echo "🍏 This job's status is ${{ job.status }}."
