@@ -29,7 +29,7 @@ jobs:
         run: python3 random/test.py
       
       - name: Build
-        run: cd random && curdir=$(pwd) && pyinstaller test.py --onefile -p $curdir --name test
+        run: cd random && pyinstaller test.py --onefile --name test
       
       - name: Enable executable permissiom
         run: chmod +x /home/runner/work/practicepublic/practicepublic/random/dist/test 
