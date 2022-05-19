@@ -30,6 +30,9 @@ jobs:
       
       - name: Build
         run: cd random && curdir=$(pwd) && pyinstaller test.py --onefile -p $curdir --name test
+      
+      - name: Enable executable permissiom
+        run: chmod +x dist/test 
         
       - name: Upload 
         uses: actions/upload-artifact@v3
